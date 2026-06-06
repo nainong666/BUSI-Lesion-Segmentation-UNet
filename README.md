@@ -7,9 +7,11 @@ BUSI 乳腺超声病灶分割 baseline 项目。当前阶段只复现基础 U-Ne
 | Experiment | Input | Loss | Metrics |
 | --- | ---: | --- | --- |
 | `unet_256_bce_dice` | 256 x 256 | BCE + Dice | Dice, IoU |
+| `unet_512_bce_dice` | 512 x 512 | BCE + Dice | Dice, IoU |
 | `unet_256_dice` | 256 x 256 | Dice Loss | Dice, IoU |
+| `unet_256_bce` | 256 x 256 | BCE Loss | Dice, IoU |
 
-后续可继续加入 `unet_512_bce_dice` 和 `unet_256_bce`。
+当前四组基础 U-Net baseline 已完成。
 
 ## Dataset
 
@@ -46,6 +48,8 @@ data/folds/
 ```powershell
 python scripts\train_cv.py --experiment unet_256_bce_dice --epochs 50 --batch-size 32 --amp
 python scripts\train_cv.py --experiment unet_256_dice --epochs 50 --batch-size 32 --amp
+python scripts\train_cv.py --experiment unet_256_bce --epochs 50 --batch-size 32 --amp
+python scripts\train_cv.py --experiment unet_512_bce_dice --epochs 50 --batch-size 8 --amp
 ```
 
 云端 AutoDL 使用：
@@ -77,6 +81,8 @@ epochs 50
 | Experiment | Dice | IoU |
 | --- | ---: | ---: |
 | `unet_256_bce_dice` | 0.7431 +/- 0.0155 | 0.6457 +/- 0.0176 |
+| `unet_256_bce` | 0.7240 +/- 0.0296 | 0.6281 +/- 0.0309 |
 | `unet_256_dice` | 0.7093 +/- 0.0359 | 0.6107 +/- 0.0368 |
+| `unet_512_bce_dice` | 0.6854 +/- 0.0113 | 0.5768 +/- 0.0127 |
 
 完整 checkpoint 和 `runs_cv/` 保留在云端实例；本地只同步轻量 `reports/`、fold 清单和训练日志。
