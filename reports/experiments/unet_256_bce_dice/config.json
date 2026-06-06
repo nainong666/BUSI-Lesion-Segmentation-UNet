@@ -1,0 +1,26 @@
+{
+  "experiment": "unet_256_bce_dice",
+  "data_dir": "/root/autodl-tmp/CNN_vs_ViT_vs_Swin_Transformer/Dataset_BUSI_with_GT",
+  "folds_dir": "/root/autodl-tmp/BUSI_Lesion_Segmentation_UNet/data/folds",
+  "output_root": "/root/autodl-tmp/BUSI_Lesion_Segmentation_UNet/runs_cv",
+  "folds": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "epochs": 50,
+  "batch_size": 32,
+  "num_workers": 4,
+  "learning_rate": 0.0001,
+  "weight_decay": 1e-05,
+  "base_channels": 64,
+  "seed": 42,
+  "device": "cuda",
+  "amp": true,
+  "force": false,
+  "examples": 8,
+  "image_size": 256,
+  "loss": "bce_dice"
+}

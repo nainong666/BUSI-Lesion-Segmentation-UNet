@@ -1,0 +1,29 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.cache/
+
+# Local data and generated training outputs
+Dataset_BUSI_with_GT/
+data/folds/
+runs/
+runs_cv/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.log
+*.pid
+
+# OS / IDE
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Smoke-test scratch
+.smoke_busi/
+.smoke_folds/
+.smoke_runs/
