@@ -66,6 +66,8 @@ python scripts\train_cv.py --experiment unet_512_bce_dice --epochs 50 --batch-si
 
 `runs_cv/` 和权重文件不上传到 GitHub。
 
+分析报告：[`reports/analysis_report.md`](reports/analysis_report.md)
+
 ## Current Results
 
 云端环境：
